@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Video Player</title>
+    <style>
+        /* Basic Styling for Video Player */
+        #video-container {
+            width: 80%;
+            margin: 0 auto;
+            text-align: center;
+            background-color: #000;
+        }
+        #video-player {
+            width: 100%;
+            max-width: 700px;
+            height: auto;
+        }
+        .controls {
+            margin-top: 10px;
+        }
+        button {
+            padding: 10px;
+            margin: 5px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:disabled {
+            background-color: #ddd;
+        }
+
+        h1{
+            color: #dee7e6;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            background-color: rgb(23, 218, 208);
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+            
+        }
+
+        body{
+            background-color: #ebe1e1;
+            padding: 0;
+            margin: 0;
+
+        }
+        
+        h2{
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            margin: 9px;
+        }
+
+
+        h3{
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+            margin: 0 px;
+            text-align: center;
+        }
+
+        a{
+            text-decoration: none;
+            font-size: large;
+            color: #e3eeee;
+            background-color: #4CAF50;
+            margin: 10px;
+            padding: 10px;
+            text-align: center;
+            align-items: center;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        .box{
+            margin: 25px;
+            padding: 10px;
+            text-align: center;
+
+        }
+
+    </style>
+</head>
+<body>
+
+    <div>
+        <h1>NIMATY PLAY 🏹⁀➴</h1>
+    </div>
+
+    <div>
+        <h2>IF YOU WANT LESS AD YOU CAN USE BRAVE BROWSER
+        </h2>
+    </div>
+
+    <div>
+        <h3>SCROLL DOWN 👇 
+        </h3>
+    </div>
+
+
+
+<div id="video-container">
+    <video id="video-player"  poster="bca.jpg">
+        <source src="" type="video/mp4" >
+        Your browser does not support HTML5 video.
+    </video>
+
+   </div>
+
+   <div class="box">
+    <a href="https://moviesmod.bot/download-better-call-saul-season-1-6-hindi-480p-720p-1080p/">DOWENLOAD NOW </a>
+</div>
+
+<script>
+    // Get video player and buttons
+    const videoPlayer = document.getElementById('video-player');
+    const playPauseBtn = document.getElementById('playPauseBtn');
+    const backwardBtn = document.getElementById('backwardBtn');
+    const forwardBtn = document.getElementById('forwardBtn');
+    const fullscreenBtn = document.getElementById('fullscreenBtn');
+
+    // Play/Pause functionality
+    playPauseBtn.addEventListener('click', () => {
+        if (videoPlayer.paused) {
+            videoPlayer.play();
+            playPauseBtn.textContent = 'Pause';
+        } else {
+            videoPlayer.pause();
+            playPauseBtn.textContent = 'Play';
+        }
+    });
+
+    // 10 seconds backward
+    backwardBtn.addEventListener('click', () => {
+        videoPlayer.currentTime -= 10;
+    });
+
+    // 10 seconds forward
+    forwardBtn.addEventListener('click', () => {
+        videoPlayer.currentTime += 10;
+    });
+
+    // Fullscreen functionality
+    fullscreenBtn.addEventListener('click', () => {
+        if (videoPlayer.requestFullscreen) {
+            videoPlayer.requestFullscreen();
+        } else if (videoPlayer.mozRequestFullScreen) { // Firefox
+            videoPlayer.mozRequestFullScreen();
+        } else if (videoPlayer.webkitRequestFullscreen) { // Chrome, Safari
+            videoPlayer.webkitRequestFullscreen();
+        } else if (videoPlayer.msRequestFullscreen) { // IE/Edge
+            videoPlayer.msRequestFullscreen();
+        }
+    });
+</script>
+
+</body>
+</html>

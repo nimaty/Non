@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LONGLEGS</title>
+    <link rel="shortcut icon" href="bow-and-arrow-emoji-by-google.png" type="image/x-icon">
+    <style>
+        /* Basic Styling for Video Player */
+        #video-container {
+            width: 90%;
+            margin: 0 auto;
+            text-align: center;
+            background-color: #000;
+            margin-top: 25px;
+        }
+        #video-player {
+            width: 100%;
+            max-width: 700px;
+            height: auto;
+            
+        }
+        .controls {
+            margin-top: 10px;
+        }
+        button {
+            padding: 10px;
+            margin: 5px;
+            background-color: #4CAF50;
+            color: rgb(230, 243, 242);
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        button:disabled {
+            background-color: #ddd;
+        }
+
+        a{
+            text-decoration: none;
+            font-size: large;
+            color: #e3eeee;
+            background-color: #4CAF50;
+            margin: 10px;
+            padding: 10px;
+            text-align: center;
+            align-items: center;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        .box{
+            margin: 25px;
+            padding: 10px;
+            text-align: center;
+
+        }
+
+        h1{
+            color: #dee7e6;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            background-color: rgb(23, 218, 208);
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+            
+        }
+
+
+        body{
+            background-color: #fff2f2;
+            padding: 0;
+            margin: 0;
+
+        }
+
+
+        h2{
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            margin: 9px;
+        }
+    </style>
+</head>
+<body>
+
+    <div>
+        <h1>NIMATY PLAY 🏹⁀➴</h1>
+    </div>
+
+
+    <div>
+        <h2>YOU CAN DOWNLOAD IT IN 720p</h2>
+    </div>
+
+<div id="video-container">
+    <video id="video-player" controls  poster="long leg-Photoroom.png">
+        <source src="Longlegs.2024.720p.BluRay.Hindi.English.ESubs.MoviesMod.day(0).mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+    </video>
+
+    <div class="controls">
+        <button id="playPauseBtn">Play</button>
+        <button id="backwardBtn">10s Backward</button>
+        <button id="forwardBtn">10s Forward</button>
+        <button id="fullscreenBtn">Full Screen</button>
+    </div>
+</div>
+
+<div class="box">
+    <a href="Longlegs.2024.720p.BluRay.Hindi.English.ESubs.MoviesMod.day(0).mp4" download="Longlegs.2024.720p.BluRay.Hindi.English.ESubs.MoviesMod.day(0).mp4">DOWENLOAD NOW </a>
+
+<script>
+    // Get video player and buttons
+    const videoPlayer = document.getElementById('video-player');
+    const playPauseBtn = document.getElementById('playPauseBtn');
+    const backwardBtn = document.getElementById('backwardBtn');
+    const forwardBtn = document.getElementById('forwardBtn');
+    const fullscreenBtn = document.getElementById('fullscreenBtn');
+
+    // Play/Pause functionality
+    playPauseBtn.addEventListener('click', () => {
+        if (videoPlayer.paused) {
+            videoPlayer.play();
+            playPauseBtn.textContent = 'Pause';
+        } else {
+            videoPlayer.pause();
+            playPauseBtn.textContent = 'Play';
+        }
+    });
+
+    // 10 seconds backward
+    backwardBtn.addEventListener('click', () => {
+        videoPlayer.currentTime -= 10;
+    });
+
+    // 10 seconds forward
+    forwardBtn.addEventListener('click', () => {
+        videoPlayer.currentTime += 10;
+    });
+
+    // Fullscreen functionality
+    fullscreenBtn.addEventListener('click', () => {
+        if (videoPlayer.requestFullscreen) {
+            videoPlayer.requestFullscreen();
+        } else if (videoPlayer.mozRequestFullScreen) { // Firefox
+            videoPlayer.mozRequestFullScreen();
+        } else if (videoPlayer.webkitRequestFullscreen) { // Chrome, Safari
+            videoPlayer.webkitRequestFullscreen();
+        } else if (videoPlayer.msRequestFullscreen) { // IE/Edge
+            videoPlayer.msRequestFullscreen();
+        }
+    });
+
+    alert("TAKE MAX 20 SEC TO PLAY !!!! ")
+</script>
+
+</body>
+</html>

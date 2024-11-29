@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Video Player</title>
+    <style>
+        /* Basic Styling for Video Player */
+        #video-container {
+            width: 80%;
+            margin: 0 auto;
+            text-align: center;
+            background-color: #000;
+        }
+        #video-player {
+            width: 100%;
+            max-width: 700px;
+            height: auto;
+        }
+        .controls {
+            margin-top: 10px;
+        }
+        button {
+            padding: 10px;
+            margin: 5px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:disabled {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+<body>
+
+<div id="video-container">
+    <video id="video-player" >
+        <source src="saveinsta.cc_1080p-solo-leveling-official-trailer.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+    </video>
+
+    <div class="controls">
+        <button id="playPauseBtn">Play</button>
+        <button id="backwardBtn">10s Backward</button>
+        <button id="forwardBtn">10s Forward</button>
+        <button id="fullscreenBtn">Full Screen</button>
+    </div>
+</div>
+
+<script>
+    // Get video player and buttons
+    const videoPlayer = document.getElementById('video-player');
+    const playPauseBtn = document.getElementById('playPauseBtn');
+    const backwardBtn = document.getElementById('backwardBtn');
+    const forwardBtn = document.getElementById('forwardBtn');
+    const fullscreenBtn = document.getElementById('fullscreenBtn');
+
+    // Play/Pause functionality
+    playPauseBtn.addEventListener('click', () => {
+        if (videoPlayer.paused) {
+            videoPlayer.play();
+            playPauseBtn.textContent = 'Pause';
+        } else {
+            videoPlayer.pause();
+            playPauseBtn.textContent = 'Play';
+        }
+    });
+
+    // 10 seconds backward
+    backwardBtn.addEventListener('click', () => {
+        videoPlayer.currentTime -= 10;
+    });
+
+    // 10 seconds forward
+    forwardBtn.addEventListener('click', () => {
+        videoPlayer.currentTime += 10;
+    });
+
+    // Fullscreen functionality
+    fullscreenBtn.addEventListener('click', () => {
+        if (videoPlayer.requestFullscreen) {
+            videoPlayer.requestFullscreen();
+        } else if (videoPlayer.mozRequestFullScreen) { // Firefox
+            videoPlayer.mozRequestFullScreen();
+        } else if (videoPlayer.webkitRequestFullscreen) { // Chrome, Safari
+            videoPlayer.webkitRequestFullscreen();
+        } else if (videoPlayer.msRequestFullscreen) { // IE/Edge
+            videoPlayer.msRequestFullscreen();
+        }
+    });
+</script>
+
+</body>
+</html>

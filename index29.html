@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Video Player</title>
+    <style>
+        /* Basic Styling for Video Player */
+        #video-container {
+            width: 80%;
+            margin: 0 auto;
+            text-align: center;
+            background-color: #000;
+        }
+        #video-player {
+            width: 100%;
+            max-width: 700px;
+            height: auto;
+            
+            
+        }
+        .controls {
+            margin-top: 10px;
+        }
+        button {
+            padding: 5px;
+            margin: 5px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 13px;
+        }
+        button:disabled {
+            background-color: #ddd;
+        }
+
+        
+
+.button-28 {
+  appearance: none;
+  padding: 15px;
+ 
+}
+
+.button-28:disabled {
+  pointer-events: none;
+}
+
+.button-28:hover {
+  color: #fff;
+  background-color: #1A1A1A;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  transform: translateY(-2px);
+}
+
+.button-28:active {
+  box-shadow: none;
+  transform: translateY(0);
+}
+
+a{
+    text-decoration: none;
+    color: rgb(221, 230, 230);
+    margin: 2px;
+    padding: 1px;
+}
+
+body{
+    background-color: #e7eff0;
+}
+
+
+        
+
+  
+
+    </style>
+</head>
+<body>
+
+<div id="video-container">
+    <video id="video-player" >
+        <source src="saveinsta.cc_1080p-solo-leveling-official-trailer.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+    </video>
+
+    <div class="controls">
+        <button id="playPauseBtn">Play</button>
+        <button id="backwardBtn">10s Backward</button>
+        <button id="forwardBtn">10s Forward</button>
+        <button id="fullscreenBtn">Full Screen</button>
+    </div>
+</div>
+
+<button class="button-28" role="button">
+    <a href="https://animevilla.in/anime/solo-leveling-hindi-dubbed/">DOWENLOAD NOW</a>
+</button>
+
+
+<script>
+    // Get video player and buttons
+    const videoPlayer = document.getElementById('video-player');
+    const playPauseBtn = document.getElementById('playPauseBtn');
+    const backwardBtn = document.getElementById('backwardBtn');
+    const forwardBtn = document.getElementById('forwardBtn');
+    const fullscreenBtn = document.getElementById('fullscreenBtn');
+
+    // Play/Pause functionality
+    playPauseBtn.addEventListener('click', () => {
+        if (videoPlayer.paused) {
+            videoPlayer.play();
+            playPauseBtn.textContent = 'Pause';
+        } else {
+            videoPlayer.pause();
+            playPauseBtn.textContent = 'Play';
+        }
+    });
+
+    // 10 seconds backward
+    backwardBtn.addEventListener('click', () => {
+        videoPlayer.currentTime -= 10;
+    });
+
+    // 10 seconds forward
+    forwardBtn.addEventListener('click', () => {
+        videoPlayer.currentTime += 10;
+    });
+
+    // Fullscreen functionality
+    fullscreenBtn.addEventListener('click', () => {
+        if (videoPlayer.requestFullscreen) {
+            videoPlayer.requestFullscreen();
+        } else if (videoPlayer.mozRequestFullScreen) { // Firefox
+            videoPlayer.mozRequestFullScreen();
+        } else if (videoPlayer.webkitRequestFullscreen) { // Chrome, Safari
+            videoPlayer.webkitRequestFullscreen();
+        } else if (videoPlayer.msRequestFullscreen) { // IE/Edge
+            videoPlayer.msRequestFullscreen();
+        }
+    });
+</script>
+
+</body>
+</html>
